@@ -6,19 +6,21 @@ Data teams often need to build libraries and services to make it easier to work 
 
 ## Sample Input
 
+```
 first_name,last_name,count
 chuck,norris,10
 kristen,norris,17
 john,lee,3
 sam,mcgregor,15
 john,mcgregor,19
-
+```
 ## Sample Output
 
+```
 norris,27
 lee,3
 mcgregor,34
-
+```
 
 ## How to run example and setup environment:
 
