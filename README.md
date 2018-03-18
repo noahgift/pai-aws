@@ -4,6 +4,8 @@ An example project that shows how to create a Data Engineering API around Flask 
 
 Data teams often need to build libraries and services to make it easier to work with data on the platform.  In this example there is a need to create a Proof of Concept aggregation of csv data.  A REST API that accepts a csv, a column to group on, and a column to aggregate and returns the result.
 
+Note,this project is a Chapter in the book Pragmatic AI, the entire projects source can be found [here](https://github.com/noahgift/pragmaticai)
+
 ## Sample Input
 
 ```
