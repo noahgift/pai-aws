@@ -6,6 +6,8 @@ Data teams often need to build libraries and services to make it easier to work 
 
 Note,this project is a Chapter in the book Pragmatic AI, the entire projects source can be found [here](https://github.com/noahgift/pragmaticai)
 
+[Swagger API](https://user-images.githubusercontent.com/58792/37561897-019be4fc-2a18-11e8-8351-53d8d7f527b9.png)
+
 ## Sample Input
 
 ```
