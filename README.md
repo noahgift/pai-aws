@@ -6,6 +6,15 @@ Data teams often need to build libraries and services to make it easier to work 
 
 Note,this project is a Chapter in the book Pragmatic AI, the entire projects source can be found [here](https://github.com/noahgift/pragmaticai)
 
+## Using the default web app.
+The Swagger API has some pretty powerful tools built in.
+
+* To list the plugins that are loaded:
+
+![Plugins](https://user-images.githubusercontent.com/58792/37561928-cf57944a-2a18-11e8-8f97-3d1e1cda4041.png)
+
+* To apply one of those functions:
+
 ![Swagger API](https://user-images.githubusercontent.com/58792/37561897-019be4fc-2a18-11e8-8351-53d8d7f527b9.png)
 
 ## Sample Input
