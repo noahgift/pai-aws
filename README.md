@@ -148,7 +148,7 @@ Using the requests library you can query the api as follows in IPython:
 
 In [1]: import requests, base64
 In [2]: url = "http://0.0.0.0:5001/api/npsum"
-In [3]: payload = {'column'='count', 'group_by'="last_name"}
+In [3]: payload = {'column':'count', 'group_by':"last_name"}
 In [3]: headers = {'Content-Type': 'application/json'}
 In [3]: with open("ext/input.csv", "rb") as f:
     ...:     data = base64.b64encode(f.read())
