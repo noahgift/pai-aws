@@ -4,6 +4,19 @@ An example project that shows how to create a Data Engineering API around Flask 
 
 Data teams often need to build libraries and services to make it easier to work with data on the platform.  In this example there is a need to create a Proof of Concept aggregation of csv data.  A REST API that accepts a csv, a column to group on, and a column to aggregate and returns the result.
 
+Note,this project is a Chapter in the book Pragmatic AI, the entire projects source can be found [here](https://github.com/noahgift/pragmaticai)
+
+## Using the default web app.
+The Swagger API has some pretty powerful tools built in.
+
+* To list the plugins that are loaded:
+
+![Plugins](https://user-images.githubusercontent.com/58792/37561928-cf57944a-2a18-11e8-8f97-3d1e1cda4041.png)
+
+* To apply one of those functions:
+
+![Swagger API](https://user-images.githubusercontent.com/58792/37561897-019be4fc-2a18-11e8-8351-53d8d7f527b9.png)
+
 ## Sample Input
 
 ```
@@ -135,7 +148,7 @@ Using the requests library you can query the api as follows in IPython:
 
 In [1]: import requests, base64
 In [2]: url = "http://0.0.0.0:5001/api/npsum"
-In [3]: payload = {'column'='count', 'group_by'="last_name"}
+In [3]: payload = {'column':'count', 'group_by':"last_name"}
 In [3]: headers = {'Content-Type': 'application/json'}
 In [3]: with open("ext/input.csv", "rb") as f:
     ...:     data = base64.b64encode(f.read())
