@@ -1,3 +1,5 @@
+[![MLOPs Python Cookbook with Github Actions](https://github.com/noahgift/pai-aws/actions/workflows/test.yml/badge.svg)](https://github.com/noahgift/pai-aws/actions/workflows/test.yml)
+
 # Data Engineering API Example
 
 An example project that shows how to create a Data Engineering API around Flask and Pandas:
