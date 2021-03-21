@@ -64,7 +64,7 @@ def list_apply_funcs():
 @app.route('/api/<groupbyop>', methods = ['PUT'])
 def csv_aggregate_columns(groupbyop):
     """Aggregate column in an uploaded csv
-    
+
     ---
         consumes:  application/json
         parameters:
@@ -78,7 +78,7 @@ def csv_aggregate_columns(groupbyop):
                 type: string
                 description:  The column to process in an aggregation
                 required:  True
-            -   in: query    
+            -   in: query
                 name: group_by
                 type: string
                 description:  The column to group_by in an aggregation
@@ -111,7 +111,7 @@ def csv_aggregate_columns(groupbyop):
              "Wrong Content-Type in request: {content_type} sent, but requires application/json".\
             format(content_type=content_type)
         log.info(wrong_method_log_msg)
-        return jsonify({"content_type": content_type, 
+        return jsonify({"content_type": content_type,
                 "error_msg": wrong_method_log_msg}), status.HTTP_415_UNSUPPORTED_MEDIA_TYPE
 
     #Parse Query Parameters and Retrieve Values
@@ -120,15 +120,15 @@ def csv_aggregate_columns(groupbyop):
     log.info(query_string_msg)
     column = request.args.get("column")
     group_by = request.args.get("group_by")
-    
+
     #Query Parameter logging and handling
     query_parameters_log_msg = "column: [{column}] and group_by: [{group_by}] Query Parameter values".\
-        format(column=column, group_by=group_by) 
+        format(column=column, group_by=group_by)
     log.info(query_parameters_log_msg)
     if not column or not group_by:
         error_msg = "Query Parameter column or group_by not set"
         log.info(error_msg)
-        return jsonify({"column": column, "group_by": group_by, 
+        return jsonify({"column": column, "group_by": group_by,
                 "error_msg": error_msg}), status.HTTP_400_BAD_REQUEST
 
     #Load Plugins and grab correct one
@@ -139,7 +139,7 @@ def csv_aggregate_columns(groupbyop):
     #Unpack data and operate on it
     data,_ = _b64decode_helper(request)
     #Returns Pandas Series
-    res = csvops.group_by_operations(data, 
+    res = csvops.group_by_operations(data,
         groupby_column_name=group_by, apply_column_name=column, func=appliable_func)
     log.info(res)
     return res.to_json(), status.HTTP_200_OK
