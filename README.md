@@ -97,20 +97,40 @@ Options:
   --help     Show this message and exit.
 ```
 
-Aggregate CSV
+Get median 
 
 ```
-(.pai-aws) ➜  pai-aws git:(master) ✗ ./csvcli.py cvsagg --file ext/input.csv --column last_name
-Processing csvfile: ext/input.csv and column name: last_name
-{"count":{"mcgregor":34,"lee":3,"norris":27}}
+
+     Example Usage:
+    ./csvcli.py cvsops --file ext/input.csv --groupby last_name --applyname count --func npmedian
+     Processing csvfile: ext/input.csv and groupby name: last_name and applyname: count
+     2017-06-22 14:07:52,532 - nlib.utils - INFO - Loading appliable functions/plugins: npmedian
+     2017-06-22 14:07:52,533 - nlib.utils - INFO - Loading appliable functions/plugins: npsum
+     2017-06-22 14:07:52,533 - nlib.utils - INFO - Loading appliable functions/plugins: numpy
+     2017-06-22 14:07:52,533 - nlib.utils - INFO - Loading appliable functions/plugins: tanimoto
+     last_name
+     eagle    17.0
+     lee       3.0
+     smith    13.5
+     Name: count, dtype: float6
 ```
 
 Testing a bigger file than the assignment:
 
 ```
-(.pai-aws) ➜  pai-aws git:(master) ✗ ./csvcli.py cvsagg --file ext/large_input.csv --column last_name 
-Processing csvfile: ext/large_input.csv and column name: last_name
-{"count":{"mcgregor":34,"lee":3,"norris":27},"random_column":{"mcgregor":57,"lee":61,"norris":100}}
+ ./csvcli.py cvsops --file ext/large_input.csv --groupby first_name --applyname count --func npmedian
+Processing csvfile: ext/large_input.csv and groupby name: first_name and applyname: count
+2021-03-22 12:36:07,677 - nlib.utils - INFO - Loading appliable functions/plugins: npmedian
+2021-03-22 12:36:07,677 - nlib.utils - INFO - Loading appliable functions/plugins: npsum
+2021-03-22 12:36:07,677 - nlib.utils - INFO - Loading appliable functions/plugins: numpy
+2021-03-22 12:36:07,677 - nlib.utils - INFO - Loading appliable functions/plugins: tanimoto
+first_name
+john       11.0
+kristen    17.0
+piers      10.0
+sam        15.0
+Name: count, dtype: float64
+
 ```
 
 
